@@ -1,17 +1,16 @@
-import { useState } from "react";
-
-export default function UserForm() {
-  const [items, setItems] = useState([]);
-  const [selectedItems, setSelectedItems] = useState([]);
-
-  const onItemClick = (item) => {
-    setSelectedItems(item);
-  };
-  return (
-    <ul>
-      {items.map((item) => {
-        return <li onClick={() => onItemClick(item)}></li>;
-      })}
-    </ul>
-  );
+export default function canUserPlaceOrder(payment, product) {
+  let canPlaceOrder = false;
+  if (payment.hasStock === true) {
+    if (payment.processed === true) {
+      if (payment.processed === true) {
+        canPlaceOrder = true;
+      } else {
+        canPlaceOrder = false;
+      }
+    } else {
+      canPlaceOrder = false;
+    }
+    return canPlaceOrder;
+  }
+  return <ul></ul>;
 }
