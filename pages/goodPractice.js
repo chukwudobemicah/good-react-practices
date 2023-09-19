@@ -1,14 +1,8 @@
-const RolesView = {
-  GUEST: GuestView,
-  ADMIN: AdminView,
-  CONTRIBUTOR: ContributorView,
-};
-export default function UserView({ role }) {
-  const CurrentView = RolesView[role] ?? DefaultView;
+export default function UserView() {
+  const renderRow = () => {
+    const ROW_HEIGHT = 20;
 
-  return (
-    <div>
-      <CurrentView />
-    </div>
-  );
+    row.height = ROW_HEIGHT;
+  };
+  return <div></div>;
 }
