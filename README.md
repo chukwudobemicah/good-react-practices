@@ -1,6 +1,4 @@
 ## REACT GOOD PRACTICES.
 
-## LESSON 2
-
-<p>For bad practice: of a server component is imported and rendered in client side component, react will render the client side component on the server.</p>
-<p>For good practice: server components should be passed down as props to avoid the client side component to be rendered on the client side.</p>
+<p>For bad practice: Used a ternary to render different types of views, which resulted to so much conditions</p>
+<p>For good practice: made an object containing the view, then made a variable to hold the present view, then render it, which makes things cleaner and more readable. While using just one condition</p>
