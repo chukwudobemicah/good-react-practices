@@ -1,8 +1,17 @@
-export default function UserView() {
-  const renderRow = () => {
-    const ROW_HEIGHT = 20;
+import { useState } from "react";
 
-    row.height = ROW_HEIGHT;
+export default function UserForm() {
+  const [items, setItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  const onItemClick = (item) => {
+    setSelectedItems(item);
   };
-  return <div></div>;
+  return (
+    <ul>
+      {items.map((item) => {
+        return <li onClick={onItemClick(item)}></li>;
+      })}
+    </ul>
+  );
 }
