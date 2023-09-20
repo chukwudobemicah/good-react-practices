@@ -1,18 +1,10 @@
-import { useState } from "react";
-import ServerComponent from "@@/server-components/ServerComponent";
+import { useEffect, useState } from "react";
 
-export default function App() {
-  const [firstName, setFirstName] = useState("");
+export default function App({ dashboardId }) {
+  const [note, setNote] = useState("");
+  useEffect(() => {
+    setNote("");
+  }, []);
 
-  return (
-    <div>
-      <form>
-        <input
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </form>
-      <PageContent />
-    </div>
-  );
+  return <div>{note}</div>;
 }

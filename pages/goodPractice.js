@@ -1,20 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function App() {
-  return (
-    <div>
-      <Form />
-      <PageContent />
-    </div>
-  );
+export default function App({ dashboardId }) {
+  return <DashboardNotes key={dashboardId} />;
 }
 
-function Form() {
-  const [firstName, setFirstName] = useState("");
+const DashboardNotes = () => {
+  const [note, setNote] = useState("");
 
-  return (
-    <form>
-      <input value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-    </form>
-  );
-}
+  return <div>{note}</div>;
+};
