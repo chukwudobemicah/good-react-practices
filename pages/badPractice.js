@@ -1,6 +1,8 @@
-import { useState } from "react";
-import ServerComponent from "@@/server-components/ServerComponent";
+// import { useState } from "react";
+// import ServerComponent from "@@/server-components/ServerComponent";
 
-export default function badPractice() {
-  return <ServerComponent />;
-}
+// export default function badPractice() {
+//   return <ServerComponent />;
+// }
+
+// CHECK README
