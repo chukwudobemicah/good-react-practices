@@ -1,8 +1,18 @@
-// import { useState } from "react";
-// import ServerComponent from "@@/server-components/ServerComponent";
+import { useState } from "react";
+import ServerComponent from "@@/server-components/ServerComponent";
 
-// export default function badPractice() {
-//   return <ServerComponent />;
-// }
+export default function App() {
+  const [firstName, setFirstName] = useState("");
 
-// CHECK README
+  return (
+    <div>
+      <form>
+        <input
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+      </form>
+      <PageContent />
+    </div>
+  );
+}

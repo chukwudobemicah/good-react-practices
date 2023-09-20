@@ -1,5 +1,20 @@
-// export default function GoodPractice(children) {
-//   return <div>{children}</div>;
-// }
+import { useState } from "react";
 
-// CHECK README
+export default function App() {
+  return (
+    <div>
+      <Form />
+      <PageContent />
+    </div>
+  );
+}
+
+function Form() {
+  const [firstName, setFirstName] = useState("");
+
+  return (
+    <form>
+      <input value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+    </form>
+  );
+}
