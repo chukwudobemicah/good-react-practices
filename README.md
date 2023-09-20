@@ -2,5 +2,5 @@
 
 # lesson:
 
-<p>For bad practice: Too much nesting of if statements and repetitions </p>
-<p>For good practice: short and concise conditional statement.</p>
+<p>For bad practice: not clean and Hard to follow imports  </p>
+<p>For good practice: clean and easy to follow imports.</p>
