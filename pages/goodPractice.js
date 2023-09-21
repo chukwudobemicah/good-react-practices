@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import useOutsideClick from "@/utils/hooks/useOutsideClick";
 
-export default function App({ dashboardId }) {
-  return <DashboardNotes key={dashboardId} />;
+export default function App() {
+  const elRef = useRef(null);
+  const closeModal = () => { };
+  
+  useOutsideClick(() => {
+    closeModal();
+  }, elRef);
+
+  return <div ref={elRef}>container</div>;
 }
-
-const DashboardNotes = () => {
-  const [note, setNote] = useState("");
-
-  return <div>{note}</div>;
-};
