@@ -1,13 +1,26 @@
-import { useEffect, useState } from "react";
-import useOutsideClick from "@/utils/hooks/useOutsideClick";
+import { useReducer, useState } from "react";
 
-export default function App() {
-  const elRef = useRef(null);
-  const closeModal = () => { };
-  
-  useOutsideClick(() => {
-    closeModal();
-  }, elRef);
+const reducer = (current, update) => {
+  if (update.age > 18) {
+    return { ...current, ...update };
+  }
 
-  return <div ref={elRef}>container</div>;
+  return current;
+};
+
+export default function useForm() {
+  const initialState = {
+    name: "",
+    age: "",
+    occupation: "",
+  };
+
+  const [user, setField] = useReducer(reducer, initialState);
+
+  const onInputChange = (e) => {
+    const {
+      target: { value, name },
+    } = e;
+  };
+  setField({ [name]: value });
 }
