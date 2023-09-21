@@ -1,16 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function useForm() {
-  const [user, setUser] = useState({
-    name: "",
-    age: "",
-    occupation: "",
-  });
+export default function App() {
+  const [height, setHeight] = useState(0);
+  const elRef = useRef(null);
 
-  const onInputChange = (e) => {
-    const {
-      target: { value, name },
-    } = e;
-  };
-  setUser((prevState) => ({ ...prevState, [name]: value }));
+  useEffect(() => {
+    if (elementRef.current) {
+      setHeight(elRef.current.offsetHeight);
+    }
+  }, [elRef.current]);
+
+  return <div ref={elRef}></div>;
 }

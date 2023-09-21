@@ -1,26 +1,13 @@
-import { useReducer, useState } from "react";
+import { useCallback, useState } from "react";
 
-const reducer = (current, update) => {
-  if (update.age > 18) {
-    return { ...current, ...update };
-  }
+export default function App() {
+  const [height, setHeight] = useState(0);
 
-  return current;
-};
+  const elRef = useCallback((node) => {
+    if (node !== null) {
+      setHeight(node.offsetHeight);
+    }
+  }, []);
 
-export default function useForm() {
-  const initialState = {
-    name: "",
-    age: "",
-    occupation: "",
-  };
-
-  const [user, setField] = useReducer(reducer, initialState);
-
-  const onInputChange = (e) => {
-    const {
-      target: { value, name },
-    } = e;
-  };
-  setField({ [name]: value });
+  return <div ref={elRef}></div>;
 }
