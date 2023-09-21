@@ -1,13 +1,14 @@
-import { useCallback, useState } from "react";
+import { useQuery } from "react-query";
 
-export default function App() {
-  const [height, setHeight] = useState(0);
+export default function goodPractice() {
+  const { isLoading, error, data } = useQuery("repoData", () =>
+    fetch("url").then((res) => res.json())
+  );
 
-  const elRef = useCallback((node) => {
-    if (node !== null) {
-      setHeight(node.offsetHeight);
-    }
-  }, []);
+  if (isLoading) return <Spinner />;
+  if (error) return "An error has occurred" + error.message;
 
-  return <div ref={elRef}></div>;
+  return (
+    <div className="App">{data?.image && <img src={data.image}></img>}</div>
+  );
 }
